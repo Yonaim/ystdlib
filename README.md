@@ -20,3 +20,12 @@ The name 'ystdlib' is an acronym for 'yona-standard-library', just to avoid conf
 - [ ] deque
 - [ ] queue
 - [ ] stack
+
+# References
+
+- https://cppreference.com/
+- https://cplusplus.com/
+- https://github.com/gcc-mirror/gcc/
+- https://github.com/electronicarts/EASTL
+- https://github.com/zouxiaohang/tinystl
+- https://github.com/Alinshans/MyTinySTL/tree/master
