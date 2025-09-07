@@ -9,7 +9,7 @@ After completing this project, I also plan to reimplement parts of the Boost Gra
 
 향후 더 추가될 수 있음.
 
-## IO
+## I/O
 - [ ] string
 - [ ] iostream
 
