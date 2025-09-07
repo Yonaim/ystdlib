@@ -5,16 +5,21 @@
 
 #pragma once
 
+#include "platform.h"
+#include "ystddef.h"
+
 namespace ystd
 {
     template <class T> struct allocator
     {
-        T        value_type;
-        T       *pointer;
-        const T *const_pointer;
-        T       &reference;
-        const T &reference;
-        size_t   size_type;
+        using value_type = T;
+        using pointer = T *;
+        using const_pointer = const T *;
+        using reference = T&;
+        using const reference = const T&;
+        using size_type = size_t;
+        using difference_type = ptrdiff_t;
+
         template <class U> struct rebind
         {
             typedef allocator<U> other;
