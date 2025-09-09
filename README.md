@@ -13,13 +13,18 @@ The name 'ystdlib' is an acronym for 'yona-standard-library', just to avoid conf
 - [ ] string
 - [ ] iostream
 
+## iterator
+
 ## STL containers
 - [ ] vector
 - [ ] map
-- [ ] iterator
 - [ ] deque
 - [ ] queue
 - [ ] stack
+
+# Test
+
+All the test codes in `/test` are modified from cppreference.com's one.
 
 # References
 
