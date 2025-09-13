@@ -26,17 +26,35 @@ namespace ystd
         };
 
         // member functions
-        allocator() noexcept;
-        allocator(const allocator &other) noexcept;
-        template <class U> allocator(const allocator<U> &other) noexcept;
-        ~allocator();
-        pointer       address(reference x) const noexcept;
-        const_pointer address(const_reference x) const noexcept;
-        pointer       allocate(size_type n, const void *hint = 0);
-        void          deallocate(T *p, std::size_t n);
-        size_type     max_size() const noexcept;
-        void          construct(pointer p, const_reference val);
-        void          destroy(pointer p);
+
+        // constructors
+        /*
+        - allocate: 메모리 확보
+        - deallocate: 확보했던 메모리 해제
+        - construct: 확보된 메모리에 실제 객체 생성
+        - destroy: 소멸자 호출 (메모리는 그대로임)
+        */
+        allocator() noexcept = default;
+        allocator(const allocator &other) noexcept = default;
+        template <class U> allocator(const allocator<U> &other) noexcept {};
+        ~allocator() noexcept = default;
+
+        pointer address(reference x) const noexcept { return &x; }
+
+        const_pointer address(const_reference x) const noexcept { return &x; }
+
+        pointer allocate(size_type n, const void *hint = 0) noexcept
+        {
+            return static_cast<T *>(::operator new(sizeof(T) * n);)
+        }
+
+        void deallocate(T *p, std::size_t n) noexcept {}
+
+        size_type max_size() const noexcept {}
+
+        void construct(pointer p, const_reference val) noexcept {}
+
+        void destroy(pointer p) noexcept {}
     };
 
     template <class T1, class T2>
